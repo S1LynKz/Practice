@@ -10,13 +10,24 @@ def iteration_sort(lst):
             lst[current], lst[current - 1] = lst[current - 1], lst[current]
             current = current - 1
     return lst
-# lst = ["jayden", "kevin", "anna", "bob", "lee", "yvonne", "ivan", "1", "2", "3", "76", "8", "5", "33"]
+
+def selection_sort(lst):
+    for i in range(len(lst)):
+        current = i
+
+        for j in range(i + 1, len(lst)):
+            if lst[j] < lst[current]:
+                current = j
+        lst[i], lst[current] = lst[current], lst[i]
+        print(lst)
+    return lst
 
 def main():
     lst = []
     for I in range(30):
-        lst.append(random.randint(0,100))
-    print(iteration_sort(lst))
+        lst.append(random.randint(0,50))
+    print(lst)
+    print(selection_sort(lst))
 
 if __name__ == "__main__":
     main()
